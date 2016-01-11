@@ -1,6 +1,10 @@
-required: ruby;
 
-1. gem install compass
-2. gem install sass-globbing
-3. npm install
-4. gulp
+1. git clone https://github.com/FreemanVitali/portfolio.git
+2. gem install compass
+3. gem install sass-globbing
+4. npm install
+5. gulp
+
+required: ruby;
+=======
+
