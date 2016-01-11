@@ -1,0 +1,95 @@
+extends ../main
+
+block title
+	| Домашняя страница - Интернет магазин
+
+block content
+	article.content-wrapper
+		.container
+			h1.main-title Мобильные телефоны
+			.main-content
+				include ../_common/_sidebar
+				
+				.content
+					.sort
+						.sort-left
+							.sort-select__wrap
+								.sort__title
+									| Сортировать по
+								select.sort-select__elem
+									- var $options = ['цене', 'популярности'];
+										each item in $options
+											option(value='')= item
+						.sort-right
+							.sort__title
+								| Вид каталога
+							.sort-view
+								ul.sort-view-list
+									- var $items = ['rows', 'grids', 'lines'];
+										each item in $items
+											li(class='sort-view__item sort-view__item-' + item)
+												a(href='#' data-view= item).sort-view__link
+													.sort-view__icon
+					.products
+						ul.products__list
+							- for (var i = 0; i < 9; i++)
+								li.products__item
+									.product__item-inner
+										.product__item-left
+											.product__slideshow
+												.product__slideshow-block
+													a(href="#").product__slideshow-display
+														img(src="http://lorempixel.com/200/200/technics/" alt="").product__slideshow-img
+													ul.product__slideshow-thumbs
+														- for (var x = 1; x < 4 ; x++)
+															li.product__slideshow-item
+																a(href='#').product__slideshow-link
+																	img(src='http://lorempixel.com/200/200/technics/' + x alt="img-preview").product__slideshow-thumb-img
+												.product-article
+													.product-article__title Артикул:
+													.product-article__number 189238
+											.product-discription
+												.product-discription__title Sumsung GT-I9301I Galaxy S 3
+												ul.product-discription__list
+													- var options = {"Тип SIM-карты":"Micro-SIM","Колличество SIM-карт":"1","Цвет":"Белый","ОС":"Android","Связь 3G":"Есть","4G(LTE)":"Нет","GPS модуль":"Есть"};
+													- var index = 0;
+													- for (item in options)
+														li(class="product-discription__item" + (!(index++ % 2) ? ' product-discription__item-color' : ''))
+															.products__option-key= item
+															.products__option-value= options[item] 
+												div(class="products__rating" data-rating="4")
+													ul.products__rating-list
+														li.products__rating_stars.products__rating_stars-red
+														li.products__rating_stars.products__rating_stars-red
+														li.products__rating_stars.products__rating_stars-red
+														li.products__rating_stars.products__rating_stars-red
+														li.products__rating_stars
+													.products__rating-amount 4
+										.products__right
+											.products__info
+												.products__price 11 290
+													i.rub
+											.products__info-bottom
+												a(href="#").products__buy-btn В корзину
+												.products__availabl В наличии
+						.pagination
+							ul.pagination__list
+								li.pagination__item.pagination__item_prev
+									a(href="#").pagination__link
+										.pagination__mark
+								- for (var i = 1; i < 4; i++)
+										li.pagination__item
+											a(href="#").pagination__link
+												.pagination__mark= i
+								li.pagination__item.pagination__item_next
+									a(href="#").pagination__link
+										.pagination__mark
+			.attention
+				h2.attention-title Важная информация
+				.attention__text
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non nostrum sed, quia molestiae adipisci! Repellat sunt quasi veritatis sed hic quia maxime harum quo deleniti facere, dicta iure. Ipsa cum modi suscipit nulla, dolorem sed error nostrum placeat consectetur numquam aspernatur quasi maxime fugiat beatae molestias delectus esse alias ab dolores in eaque cumque illo harum. Voluptatum eos ipsam mollitia odit, nobis, illum aliquid saepe totam consectetur quo dolorem in ea consequatur natus cumque temporibus tempora tenetur quas doloribus. Aut?
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non nostrum sed, quia molestiae adipisci! Repellat sunt quasi veritatis sed hic quia maxime harum quo deleniti facere, dicta iure. Ipsa cum modi suscipit nulla, dolorem sed error nostrum placeat consectetur numquam aspernatur quasi maxime fugiat beatae molestias delectus esse alias ab dolores in eaque cumque illo harum. Voluptatum eos ipsam mollitia odit, nobis, illum aliquid saepe totam consectetur quo dolorem in ea consequatur natus cumque temporibus tempora tenetur quas doloribus. Aut?
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non nostrum sed, quia molestiae adipisci! Repellat sunt quasi veritatis sed hic quia maxime harum quo deleniti facere, dicta iure. Ipsa cum modi suscipit nulla, dolorem sed error nostrum placeat consectetur numquam aspernatur quasi maxime fugiat beatae molestias delectus esse alias ab dolores in eaque cumque illo harum. Voluptatum eos ipsam mollitia odit, nobis, illum aliquid saepe totam consectetur quo dolorem in ea consequatur natus cumque temporibus tempora tenetur quas doloribus. Aut?
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non nostrum sed, quia molestiae adipisci! Repellat sunt quasi veritatis sed hic quia maxime harum quo deleniti facere, dicta iure. Ipsa cum modi suscipit nulla, dolorem sed error nostrum placeat consectetur numquam aspernatur quasi maxime fugiat beatae molestias delectus esse alias ab dolores in eaque cumque illo harum. Voluptatum eos ipsam mollitia odit, nobis, illum aliquid saepe totam consectetur quo dolorem in ea consequatur natus cumque temporibus tempora tenetur quas doloribus. Aut?
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non nostrum sed, quia molestiae adipisci! Repellat sunt quasi veritatis sed hic quia maxime harum quo deleniti facere, dicta iure. Ipsa cum modi suscipit nulla, dolorem sed error nostrum placeat consectetur numquam aspernatur quasi maxime fugiat beatae molestias delectus esse alias ab dolores in eaque cumque illo harum. Voluptatum eos ipsam mollitia odit, nobis, illum aliquid saepe totam consectetur quo dolorem in ea consequatur natus cumque temporibus tempora tenetur quas doloribus. Aut?
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non nostrum sed, quia molestiae adipisci! Repellat sunt quasi veritatis sed hic quia maxime harum quo deleniti facere, dicta iure. Ipsa cum modi suscipit nulla, dolorem sed error nostrum placeat consectetur numquam aspernatur quasi maxime fugiat beatae molestias delectus esse alias ab dolores in eaque cumque illo harum. Voluptatum eos ipsam mollitia odit, nobis, illum aliquid saepe totam consectetur quo dolorem in ea consequatur natus cumque temporibus tempora tenetur quas doloribus. Aut?

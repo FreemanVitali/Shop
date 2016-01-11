@@ -1,0 +1,167 @@
+.header {
+  background-color: #ffffff;
+}
+
+.header__top {
+  border-bottom: 1px solid #ebedef;
+  padding: 23px 0;
+}
+
+.socials__item {
+  display: inline-block;
+  vertical-align: top;
+  margin-left:15px;
+  
+  &:first-child {
+  margin-left:0px;
+  }
+}
+
+.socials__link {
+  display: block;
+  text-align: justify;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -99999px;
+}
+
+//socials - это название папки с картинками
+$socials-layout: horizontal;
+$socials-spacing: 70px;
+@import "icons/socials/*.png";
+$mix-layout: horizontal;
+$mix-spacing: 70px;
+
+.socials-sprite {
+  display: block;
+}
+
+.socials__link-fb{
+  @include socials-sprite(fb);
+  width: socials-sprite-width(fb);
+  height: socials-sprite-height(fb);
+}
+
+.socials__link-vk {
+  @include socials-sprite(vk);
+  width: socials-sprite-width(vk);
+  height: socials-sprite-height(vk);
+}
+
+.socials__link-tw {
+  @include socials-sprite(tw);
+  width: socials-sprite-width(tw);
+  height: socials-sprite-height(tw);
+}
+
+.header__top-left {
+  width: 50%;
+  float : left;
+}
+.header__top-right {
+  width: 50%;
+  float : left;
+}
+
+.adress{
+  @include inlineblock(middle);
+  margin-right : 85px;
+  margin-left: 65px;
+   @include open-sans(regular);
+  font-size: 14px;
+  color: #333333;
+  
+  &:before {
+    content : '';
+    @include get-sprite($misc-sprite, pin);
+    @include inlineblock(middle);
+    margin-right: 9px;
+  }
+}
+
+.phone {
+  @include inlineblock(middle);
+  margin-right : 25px;
+  @include open-sans(semibold);
+  font-size: 18px;
+  color: #333333;
+  text-decoration: none;
+  &:before {
+    content : '';
+    @include get-sprite($misc-sprite, phone);
+    @include inlineblock(middle);
+    margin-right: 9px;
+  }
+}
+
+
+.header__bottom {
+  background-color: #f4f4f4;
+  padding: 30px 0;
+}
+
+.logo, .search__form, .menu-header {
+  float : left;
+}
+
+.logo__text {
+  position: absolute;
+  top:0;
+  left: -9999px;
+}
+
+.search__form {
+  margin-left: 55px;
+}
+
+.search__form-input {
+  width: 290px;
+  @include border-radius(2px);
+  @include box-shadow(none);
+  border: 1px solid #dee1e4;
+  border-right: none;
+  padding: 6.5px 15px;
+  @include open-sans(light);
+  font-size: 14px;
+  color: #7f7f7f;
+  position: relative;
+  box-sizing : border-box;
+  &:focus {
+  outline: none;
+  }
+}
+.search__form-button {
+  @include inlineblock(top);
+  height: 33px;
+  width: 79px;
+  background-color: #ff6600;
+  border: none;
+  margin-left: -4px;
+  @include border-radius(0 2px 2px 0);
+  @include open-sans(semibold);
+  font-size: 16;
+  color : #fff;
+  &:focus {
+  outline: none;
+  }
+}
+
+.menu-header__item {
+  @include inlineblock(middle);
+  margin-left: 30px;
+  &:first-child {
+    margin-left: 50px;
+  }
+}
+
+
+.menu-header__link {
+  color: #333333;
+  @include open-sans(semibold);
+  font-size: 16px;
+  &:hover {
+    color:#ff6600;
+  }
+}
